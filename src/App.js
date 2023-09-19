@@ -1,5 +1,5 @@
-import './App.css';
 import ClimbAppRoute from './climbApp/ClimbAppRoute';
+import './App.css';
 
 function App() {
   return (

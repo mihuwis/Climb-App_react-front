@@ -1,18 +1,26 @@
 import { useNavigate, useParams } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
 
 function Home(){
 
-    const { username } = useParams();
     const navigate = useNavigate();
+    const context = useAuth();
+    const username = context.username;
 
     const goToSessions = () => {
         navigate('/climbing-sessions');
     }
 
+    const goToAreas = () => {
+        navigate('/climbing-areas');
+    }
+
     return (
-        <div>
+        <div className="container">
             <p>Hi { username }, good day for some climbing!</p>
-            <button className="btn button-green" onClick={goToSessions}>All Climbing Sessions</button>
+            <button className="btn btn-light m-3" onClick={goToSessions}>All Climbing Sessions</button>
+
+            <button className="btn btn-light m-3" onClick={goToAreas}>Climbing Areas / Routes </button>
         </div>
     )
 }
