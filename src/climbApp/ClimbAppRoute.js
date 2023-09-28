@@ -6,6 +6,7 @@ import HeaderComponent from "./HeaderComponent";
 import LoginComponent from "./LoginComponent"
 import AuthProvider, { useAuth } from "../context/AuthContext";
 import ClimbingAreaPage from "../ClimbingRoutesAndAreas/ClimbingAreaPage";
+import AddClimbingSession from "../climbingSession/AddClimbingSession";
 
 function AuthenticatedRoute({children}) {
     const authContext = useAuth();
@@ -34,6 +35,10 @@ function ClimbAppRoute() {
                         <Route path="/climbing-sessions" element={ 
                             <AuthenticatedRoute> 
                                 <ClimbingSessions />
+                            </AuthenticatedRoute>} />
+                        <Route path="/add-climbing-session" element={ 
+                            <AuthenticatedRoute> 
+                                <AddClimbingSession />
                             </AuthenticatedRoute>} />
                         <Route path="/climbing-areas" element={
                             <AuthenticatedRoute> 

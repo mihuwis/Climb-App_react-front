@@ -15,12 +15,21 @@ function Home(){
         navigate('/climbing-areas');
     }
 
+    const goToSessionCreatePage = () => {
+        navigate("/add-climbing-session");
+    }
+
     return (
         <div className="container">
             <p>Hi { username }, good day for some climbing!</p>
-            <button className="btn btn-light m-3" onClick={goToSessions}>All Climbing Sessions</button>
+            <button className="btn btn-light m-3" 
+                onClick={goToSessions}>All Climbing Sessions</button>
 
-            <button className="btn btn-light m-3" onClick={goToAreas}>Climbing Areas / Routes </button>
+            <button className="btn btn-light m-3" 
+                onClick={goToAreas}>Climbing Areas / Routes </button>
+
+            <button className="btn btn-light m-3" 
+                onClick={goToSessionCreatePage}>Add Climbing Session </button>
         </div>
     )
 }
